@@ -27,7 +27,7 @@ const EachCard = ({title, date, poster}) =>{
 
 export default function Card({movies}) {
   return (
-        movies.map((datum, key) => (<EachCard key={key} poster={datum.backdrop_path} title={datum.name} date={datum.first_air_date
+       movies && movies.map((datum, key) => (<EachCard key={key} poster={datum.backdrop_path} title={datum.name} date={datum.first_air_date
         } /> )
     )
   )
