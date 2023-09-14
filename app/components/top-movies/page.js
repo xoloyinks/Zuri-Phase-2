@@ -21,7 +21,8 @@ export default async function TopMovies() {
   
   
    const data = movies.results;
-  //  console.log(data);
+   const slicedData = data.slice(0,10);
+  //  console.log(slicedData);
 
   return (
     <>
@@ -32,7 +33,7 @@ export default async function TopMovies() {
                 <span className='text-sm cursor-pointer'>See more &gt;</span>
             </div>
             <div className='flex flex-wrap justify-between px-3 sm:px-0'>
-              <Suspense fallback="Loading..."><Card movies={data} /></Suspense>
+              <Suspense fallback="Loading..."><Card movies={slicedData} /></Suspense>
             </div>
         </section>
     </>
