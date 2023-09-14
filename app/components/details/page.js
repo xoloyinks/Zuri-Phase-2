@@ -57,7 +57,7 @@ export default function Details() {
                         <button className='z-50 flex justify-center items-center text-3xl text-white bg-white/50 rounded-full h-[85px] w-[85px]'>
                             <FaPlay />
                         </button>
-                        <div className='text-white text-lg tracking-wider font-semibold'>
+                        <div className='text-lg font-semibold tracking-wider text-white'>
                             Watch Trailer
                         </div>
                     </div>
@@ -66,23 +66,23 @@ export default function Details() {
                     <div className='flex justify-between tracking-wider'>
                         <div className='flex'>
                             <span className='font-semibold'>Top Gun: Maverick &bull; 2022 &bull; PG-13 &bull; 2h 10m </span>
-                            <span className='flex w-fit px-5'>
+                            <span className='flex px-5 w-fit'>
                                 <span className=' border-2 border-gray-200 rounded-lg text-[11px] px-3 flex items-center mr-3'>Action</span>
                                 <span  className=' border-2 border-gray-200 rounded-lg text-[11px] px-3 flex items-center'>Drama</span>
                             </span>
                         </div>
                         <div className='flex text-md'>
-                            <AiFillStar className='text-yellow-500 text-2xl mr-2'/>
+                            <AiFillStar className='mr-2 text-2xl text-yellow-500'/>
                             <span className='opacity-40'>8.5 |</span>
                             <span>| 350K</span>
                         </div>
                     </div>
-                    <div className='py-5 tracking-wider flex '>
+                    <div className='flex py-5 tracking-wider '>
 
                         <div className='w-9/12 '>
                            <span className='text-[15px]'>
                            After thirty years, Maverick is still pushing the envelope as a top naval aviator,
-                            but must confront ghosts of his past when he leads TOP GUN's elite graduates
+                            but must confront ghosts of his past when he leads TOP GUN&lsquo;s elite graduates
                             on a mission that demands the ultimate sacrifice from those chosen to fly it.
                            </span>
                         

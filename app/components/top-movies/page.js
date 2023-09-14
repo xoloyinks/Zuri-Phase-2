@@ -21,7 +21,7 @@ export default async function TopMovies() {
   
   
    const data = movies.results;
-   console.log(data);
+  //  console.log(data);
 
   return (
     <>
