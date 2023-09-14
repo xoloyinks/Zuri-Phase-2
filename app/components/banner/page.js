@@ -35,24 +35,24 @@ export default function Banner() {
       className='sm:w-full w-[1440px] h-full'
     >
       <SwiperSlide className='relative w-[100vw] sm:w-auto'>
-         <Image src={poster} width={0} height={0} alt="Picture of the author" className='absolute w-[100vw] h-[70vh] min-w-[750px] sm:h-auto' />
+         <Image src={poster} width={0} height={0} alt="Picture of the author" className='absolute w-[100vw] h-[60vh] min-w-[750px] sm:h-auto' />
          <div className='absolute z-50 flex items-center h-full px-7 sm:px-20 text-white w-[30%] sm:w-[40%]'>
-            <div>
-            <div className='text-5xl leading[18px]'>John Wick 3 : Parabellum</div>
-            <div className='flex items-center my-5 w-[60%] justify-between'>
-              <div className='flex gap-3 '>
-              <span><Image src={imdb} width={0} height={0} alt="Picture of the author" className='w-[35px] h-[17px]' /></span>
-              <span className='text-[12px] text-gray-300'> 86.0 / 100</span>
+            <div className='mt-10'>
+              <div className='text-5xl leading[18px]'>John Wick 3 : Parabellum</div>
+              <div className='flex items-center my-5 w-[60%] justify-between'>
+                <div className='flex gap-3 '>
+                <span><Image src={imdb} width={0} height={0} alt="Picture of the author" className='w-[35px] h-[17px]' /></span>
+                <span className='text-[12px] text-gray-300'> 86.0 / 100</span>
+                </div>
+                <div className='flex gap-3'>
+                  <span><Image src={ping} width={0} height={0} alt="Picture of the author" className='w-[15px] h-[17px]' /></span>
+                  <span className='text-[12px] text-gray-300'> 97%</span>
+                </div>
               </div>
-              <div className='flex gap-3'>
-                <span><Image src={ping} width={0} height={0} alt="Picture of the author" className='w-[15px] h-[17px]' /></span>
-                <span className='text-[12px] text-gray-300'> 97%</span>
+              <div className='text-[14px] w-[60%] tracking-wide sm:w-[75%] leading-[18px]'>John Wick is on the run after killing a member of the international assassins&lsquo; guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</div>
+              <div className='mt-5'>
+                <button className='flex items-center gap-2 px-5 py-2 bg-[#BE123C] rounded-md'><BsPlayCircleFill /> WATCH TRAILER</button>
               </div>
-            </div>
-            <div className='text-[14px] w-[60%] tracking-wide sm:w-[75%] leading-[18px]'>John Wick is on the run after killing a member of the international assassins&lsquo; guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</div>
-            <div className='mt-5'>
-              <button className='flex items-center gap-2 px-5 py-2 bg-[#BE123C] rounded-md'><BsPlayCircleFill /> WATCH TRAILER</button>
-            </div>
             </div>
             
          </div>
@@ -64,7 +64,7 @@ export default function Banner() {
     </Swiper>
   return (
     <>
-      <section className='sm:h-[600px] w-[100vw] overflow-x-hidden h-[70vh] relative '>
+      <section className='sm:h-[600px] w-[100vw] overflow-x-hidden h-[60vh] relative '>
             <nav className='flex justify-between w-[100vw] sm:w-full px-7 sm:px-20 py-[22px] absolute z-50'>
               {/* Logo */}
               <div className='flex items-center gap-[17px] sm:gap-[24px]'>
