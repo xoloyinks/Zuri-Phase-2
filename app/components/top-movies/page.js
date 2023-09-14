@@ -13,7 +13,7 @@ export default async function TopMovies() {
     };
      
 
-    const response = await fetch('https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1/46298', options);
+    const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1/46298', options);
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
     

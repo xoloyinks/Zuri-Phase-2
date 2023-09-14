@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import spinner from "../public/Eclipse-0.3s-250px.svg"
+import spinner from "./components/images/Eclipse-0.3s-250px.svg"
 
 export default function Loading() {
     // You can add any UI inside Loading, including a Skeleton.
