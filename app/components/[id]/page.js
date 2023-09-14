@@ -39,7 +39,8 @@ export default async function Details({params}) {
   return (
     <>
         <section className='flex'>
-            <div className='h-[100vh] border-r-4 border-gray-300 w-[15%] rounded-r-[40px] py-8 flex flex-col justify-between'>
+                
+            <div className='h-[100vh] border-r-4 border-gray-300 w-[15%] rounded-r-[40px] py-8 hidden sm:flex sm:flex-col justify-between'>
                 <div className='flex items-center px-5 gap-[17px] sm:gap-[24px]'>
                     <div><Image src={logo} width={0} height={0} alt="Picture of the author" className='w-[50px] h-[50px] sm:h-auto sm:w-auto' /></div>
                     <div className='text-[24px] font-bold text-lg sm:text-md text-[#BE123C] tracking-wider'>MovieBox</div>
@@ -71,10 +72,14 @@ export default async function Details({params}) {
                 </button>
             </div>
             <div className='w-full'>
-                <div className='relative h-[60%] w-[95%] mx-auto'>
-                    <Image unoptimized={true} src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} width={0} height={0} alt='trailer' className='w-[100%] h-[55vh] absolute mt-4 rounded-2xl' />
-                    <div className='absolute w-full h-[55vh] flex flex-col items-center justify-center'>
-                        <button className='z-50 flex justify-center items-center text-3xl text-white bg-white/50 rounded-full h-[85px] w-[85px]'>
+            <div className='flex items-center px-3 gap-[17px] sm:gap-[24px] sm:hidden py-3 mt-3'>
+                    <div><Image src={logo} width={0} height={0} alt="Picture of the author" className='w-[50px] h-[50px] sm:h-auto sm:w-auto' /></div>
+                    <div className='text-[24px] font-bold text-lg sm:text-md text-[#BE123C] tracking-wider'>MovieBox</div>
+                </div>
+                <div className='relative h-[28vh] sm:h-[60%] w-[95%] mx-auto'>
+                    <Image unoptimized={true} src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} width={0} height={0} alt='trailer' className='w-[100%] h-[25vh] sm:h-[55vh] absolute mt-4 rounded-2xl' />
+                    <div className='absolute w-full h-[27vh] sm:h-[55vh] flex flex-col items-center justify-center'>
+                        <button className='z-50 flex justify-center items-center text-xl sm:text-3xl text-white bg-white/50 rounded-full h-[70px] w-[70px] sm:h-[85px] sm:w-[85px]'>
                             <FaPlay />
                         </button>
                         <div className='text-lg font-semibold tracking-wider text-white'>
@@ -82,22 +87,22 @@ export default async function Details({params}) {
                         </div>
                     </div>
                 </div>
-                <div className='px-10 '>
-                    <div className='flex justify-between tracking-wider'>
-                        <div className='flex'>
-                            <span data-testid ="movie-title" className='font-semibold'>{ movie.original_title || movie.belongs_to_collection.name}      
-                            <span data-testid ="movie-release-date" >
-                                &bull;
-                                {movie.release_date}
-                                &bull;
-                            </span>
-                            <span data-testid ="movie-runtime" >
-                                PG-13 &bull;
-                                {movie.runtime} 
-                            </span>
+                <div className='px-5 '>
+                    <div className='justify-between tracking-wider sm:flex'>
+                        <div className='sm:flex'>
+                            <span data-testid ="movie-title" className='text-sm font-semibold sm:text-xl'>{ movie.original_title || movie.belongs_to_collection.name}      
+                                <span data-testid ="movie-release-date" >
+                                    &bull;
+                                    {movie.release_date}
+                                    &bull;
+                                </span>
+                                <span data-testid ="movie-runtime" >
+                                    PG-13 &bull;
+                                    {movie.runtime} 
+                                </span>
                             </span>
                             
-                            <span className='flex px-5 w-fit'>
+                            <span className='flex py-3 sm:px-5 w-fit sm:py-0'>
                                 {movie.genres.map((genre, key) => <span key={key} className=' border-2 border-gray-200 rounded-lg text-[11px] px-3 flex items-center mr-3'>{genre.name}</span>)}
                             </span>
                         </div>
@@ -107,34 +112,34 @@ export default async function Details({params}) {
                             <span>| 350K</span>
                         </div>
                     </div>
-                    <div className='flex py-5 tracking-wider '>
+                    <div className='py-5 tracking-wider sm:flex '>
 
-                        <div className='w-9/12 '>
+                        <div className='w-full sm:w-9/12 '>
                            <span data-testid ="movie-overview"  className='text-[15px]'>
                            {movie.overview}
                            </span>
                         
                             <div className='flex flex-col h-[12vh] my-5 justify-between text-[14px]'>
-                                <div>Director : Joseph Kosinski</div>
-                                <div>Writers :  Jim Cash, Jack Epps Jr,  Peter Craigi</div>
-                                <div>Stars: Tom Cruise, Jennifer Connelly, Miles Teller</div>
+                                <div><b>Director</b> : Joseph Kosinski</div>
+                                <div><b>Writers</b> :  Jim Cash, Jack Epps Jr,  Peter Craigi</div>
+                                <div><b>Stars</b>: Tom Cruise, Jennifer Connelly, Miles Teller</div>
                             </div>
-                            <div className='flex'>
-                                <button className='flex text-white items-center gap-2 px-5 py-2 bg-[#BE123C] rounded-md w-[40%] justify-center'>Top rated movie #65</button>
-                                <select name="" id="" className='border-2 border-gray-200 rounded-lg w-[60%] border-l-0'>
+                            <div className='sm:flex'>
+                                <button className='flex text-white items-center sm:gap-2 px-5 py-2 bg-[#BE123C] rounded-md w-full sm:w-[40%] justify-center'>Top rated movie #65</button>
+                                <select name="" id="" className='border-2 border-gray-200 rounded-lg w-full py-3 sm:py-0 sm:w-[60%] sm:border-l-0'>
                                     <option value="award">Award 9 nominations</option>
                                 </select>
                             </div>
                        </div>
 
-                       <div className='w-5/12'>
+                       <div className='w-full mt-5 sm:mt-0 sm:w-5/12'>
                             
-                            <button className='flex text-white items-center gap-2 px-5 text-sm py-2 bg-[#BE123C] rounded-md w-[60%] ml-auto justify-center'><BiSolidCoupon /> See Showtimes</button>
+                            <button className='flex text-white items-center gap-2 px-5 text-sm py-2 bg-[#BE123C] rounded-md w-full sm:w-[60%] sm:ml-auto justify-center'><BiSolidCoupon /> See Showtimes</button>
                             
-                            <button className='flex border-2 text-sm  border-[#BE123C] items-center gap-2 px-5 py-2 bg-gray-200 text-[#BE123C] rounded-md w-[60%] ml-auto justify-center mt-2'><AiOutlineMenuUnfold />More watch options</button>
+                            <button className='flex border-2 text-sm  border-[#BE123C] items-center gap-2 px-5 py-2 bg-gray-200 text-[#BE123C] rounded-md w-full sm:w-[60%] sm:ml-auto justify-center mt-2'><AiOutlineMenuUnfold />More watch options</button>
 
                             <div className='mt-2'>
-                                <Image src={demo} width={0} height={0} alt='Zuri demo' className='w-[60%] ml-auto'/>
+                                <Image src={demo} width={0} height={0} alt='Zuri demo' className='sm:w-[60%] w-[80%] mx-auto sm:ml-auto'/>
                             </div>
 
                        </div>

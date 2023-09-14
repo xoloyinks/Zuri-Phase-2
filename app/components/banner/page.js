@@ -97,10 +97,10 @@ export default function Banner() {
               </div>
               </div>
               <div className='w-full mt-3'>
-              <form onSubmit={handleSearch} action="" method="" className='items-center justify-between border-2 border-white rounded-lg w-full px-3 h-[fit-content] flex sm:hidden '>
-                <input type="search" value={search} name="search_movie" id="search_movie" onChange={(e) => setSearch(e.target.value)} placeholder='What do you want to watch?' className='bg-transparent w-[80%] text-white placeholder:text-white placeholder:text-[12px] text-[13px]  px-2 py-[5px] focus:outline-0' />
-                <button disabled = {!search}><FiSearch color='white' /></button>
-              </form>
+                <form onSubmit={handleSearch} action="" method="" className='items-center justify-between border-2 border-white rounded-lg w-full px-3 h-[fit-content] flex sm:hidden '>
+                  <input type="search" value={search} name="search_movie" id="search_movie" onChange={(e) => setSearch(e.target.value)} placeholder='What do you want to watch?' className='bg-transparent w-[80%] text-white placeholder:text-white placeholder:text-[12px] text-[13px]  px-2 py-[5px] focus:outline-0' />
+                  <button disabled = {!search}><FiSearch color='white' /></button>
+                </form>
               </div>
             </nav>
             
