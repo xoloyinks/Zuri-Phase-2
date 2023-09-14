@@ -35,7 +35,7 @@ async function getMovie(movieId){
 export default async function Details({params}) {
     const movieId = params.id;
     const movie = await getMovie(movieId);
-    console.log(movie);
+    // console.log(movie);
   return (
     <>
         <section className='flex'>
@@ -85,9 +85,20 @@ export default async function Details({params}) {
                 <div className='px-10 '>
                     <div className='flex justify-between tracking-wider'>
                         <div className='flex'>
-                            <span className='font-semibold'>{movie.belongs_to_collection || movie.original_title} &bull; 2022 &bull; PG-13 &bull; 2h 10m </span>
+                            <span data-testid ="movie-title" className='font-semibold'>{ movie.original_title || movie.belongs_to_collection.name}      
+                            <span data-testid ="movie-release-date" >
+                                &bull;
+                                {movie.release_date}
+                                &bull;
+                            </span>
+                            <span data-testid ="movie-runtime" >
+                                PG-13 &bull;
+                                {movie.runtime} 
+                            </span>
+                            </span>
+                            
                             <span className='flex px-5 w-fit'>
-                                {movie.genres.map((genre) => <span key={genre.id} className=' border-2 border-gray-200 rounded-lg text-[11px] px-3 flex items-center mr-3'>{genre.name}</span>)}
+                                {movie.genres.map((genre, key) => <span key={key} className=' border-2 border-gray-200 rounded-lg text-[11px] px-3 flex items-center mr-3'>{genre.name}</span>)}
                             </span>
                         </div>
                         <div className='flex text-md'>
@@ -99,7 +110,7 @@ export default async function Details({params}) {
                     <div className='flex py-5 tracking-wider '>
 
                         <div className='w-9/12 '>
-                           <span className='text-[15px]'>
+                           <span data-testid ="movie-overview"  className='text-[15px]'>
                            {movie.overview}
                            </span>
                         

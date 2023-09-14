@@ -1,9 +1,11 @@
 "use client"
 
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {FiSearch} from 'react-icons/fi';
 import {BsPlayCircleFill} from 'react-icons/bs'
+
 
 import poster from "../images/Poster.png";
 import logo from "../images/tv.png";
@@ -24,6 +26,16 @@ import 'swiper/css/scrollbar';
 
 
 export default function Banner() {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if(!search) return;
+    router.push(`/search/${search}`);
+    
+  }
+
   const swiper = <Swiper
       // install Swiper modules
       modules={[ Scrollbar, A11y]}
@@ -37,7 +49,7 @@ export default function Banner() {
       <SwiperSlide className='relative w-[100vw] sm:w-auto'>
          <Image src={poster} width={0} height={0} alt="Picture of the author" className='absolute w-[100vw] h-[60vh] min-w-[750px] sm:h-auto' />
          <div className='absolute z-50 flex items-center h-full px-7 sm:px-20 text-white w-[30%] sm:w-[40%]'>
-            <div className='mt-10'>
+            <div className='mt-16'>
               <div className='text-5xl leading[18px]'>John Wick 3 : Parabellum</div>
               <div className='flex items-center my-5 w-[60%] justify-between'>
                 <div className='flex gap-3 '>
@@ -65,22 +77,33 @@ export default function Banner() {
   return (
     <>
       <section className='sm:h-[600px] w-[100vw] overflow-x-hidden h-[60vh] relative '>
-            <nav className='flex justify-between w-[100vw] sm:w-full px-7 sm:px-20 py-[22px] absolute z-50'>
-              {/* Logo */}
-              <div className='flex items-center gap-[17px] sm:gap-[24px]'>
+            <nav className='w-[100vw] sm:w-full px-7 sm:px-20 py-[22px] absolute z-50'>
+              <div className='flex justify-between '>
+                {/* Logo */}
+              <div className='flex items-center gap-[10px] sm:gap-[24px]'>
                 <div><Image src={logo} width={0} height={0} alt="Picture of the author" className='w-[50px] h-[50px] sm:h-auto sm:w-auto' /></div>
-                <div className='text-[24px] font-[700px] text-lg sm:text-md text-white'>MovieBox</div>
+                <div className='text-[17px] font-[700px] text-lg sm:text-md text-white'>MovieBox</div>
               </div>
               {/* Form for search */}
-              <form action="" method="" className='items-center justify-between border-2 border-white rounded-lg w-[40%] px-3 h-[fit-content] hidden sm:flex'>
-                <input type="search" name="search_movie" id="search_movie" placeholder='What do you want to watch?' className='bg-transparent w-[70%] text-white placeholder:text-white placeholder:text-[12px] text-[13px]  px-2 py-[5px] focus:outline-0' />
-                <button><FiSearch color='white' /></button>
+              <form onSubmit={handleSearch} action="" method="" className='items-center justify-between border-2 border-white rounded-lg w-[40%] px-3 h-[fit-content] hidden sm:flex '>
+                <input type="search" value={search} name="search_movie" id="search_movie" onChange={(e) => setSearch(e.target.value)} placeholder='What do you want to watch?' className='bg-transparent w-[80%] text-white placeholder:text-white placeholder:text-[12px] text-[13px]  px-2 py-[5px] focus:outline-0' />
+                <button disabled = {!search}><FiSearch color='white' /></button>
               </form>
+             
+
               <div className='flex items-center gap-[22px]'>
                 <span className='hidden font-semibold text-white sm:block'>Sign in</span>
                 <button className='w-[40px] h-[40px] rounded-full bg-[#BE123C] flex items-center justify-center'><Image src={menu} width={0} height={0} alt="Picture of the author"  /></button>
               </div>
+              </div>
+              <div className='w-full mt-3'>
+              <form onSubmit={handleSearch} action="" method="" className='items-center justify-between border-2 border-white rounded-lg w-full px-3 h-[fit-content] flex sm:hidden '>
+                <input type="search" value={search} name="search_movie" id="search_movie" onChange={(e) => setSearch(e.target.value)} placeholder='What do you want to watch?' className='bg-transparent w-[80%] text-white placeholder:text-white placeholder:text-[12px] text-[13px]  px-2 py-[5px] focus:outline-0' />
+                <button disabled = {!search}><FiSearch color='white' /></button>
+              </form>
+              </div>
             </nav>
+            
           {swiper}
       </section>
     </>
