@@ -32,7 +32,7 @@ export default async function TopMovies() {
                 <h1 className='text-xl font-semibold sm:text-3xl'>Top 10 Movies</h1>
                 <span className='text-sm cursor-pointer'>See more &gt;</span>
             </div>
-            <div className='flex flex-wrap justify-between px-3 sm:px-0'>
+            <div className='flex flex-wrap justify-between px-3 sm:justify-evenly sm:px-0' >
               <Suspense fallback="Loading..."><Card movies={slicedData} /></Suspense>
             </div>
         </section>

@@ -69,9 +69,9 @@ export default function Banner() {
             
          </div>
       </SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide><span className='flex items-center h-full px-10 text-xl font-bold bg-blue-700 sm:justify-center'>Slide 2</span></SwiperSlide>
+      <SwiperSlide><span className='flex items-center h-full px-10 text-xl font-bold bg-gray-700 sm:justify-center'>Slide 3</span></SwiperSlide>
+      <SwiperSlide><span className='flex items-center h-full px-10 text-xl font-bold bg-blue-700 sm:justify-center'>Slide 4</span></SwiperSlide>
       ...
     </Swiper>
   return (

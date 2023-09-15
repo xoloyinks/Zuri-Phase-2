@@ -14,7 +14,7 @@ const EachCard = ({title, date, poster, id}) =>{
     const router = useRouter();
 
     const showDetails = () => {
-        router.push(`/components/${id}`);
+        router.push(`/movies/${id}`);
       };
     return(
         <>

@@ -11,9 +11,8 @@ import {AiFillStar,AiOutlineMenuUnfold} from 'react-icons/ai'
 import {BiSolidCoupon} from 'react-icons/bi'
 
 
-import logo from "../images/tv.png";
-import trailer from "../images/Rectangle 29.png";
-import demo from "../images/Rectangle 37.png"
+import logo from "/public/tv.png";
+import demo from "/public/Rectangle 37.png"
 
 
 
@@ -36,6 +35,8 @@ export default async function Details({params}) {
     const movieId = params.id;
     const movie = await getMovie(movieId);
     // console.log(movie);
+    const setDate = new Date(movie.release_date);
+    const utcDate = setDate.toUTCString();
   return (
     <>
         <section className='flex'>
@@ -90,15 +91,16 @@ export default async function Details({params}) {
                 <div className='px-5 '>
                     <div className='justify-between tracking-wider sm:flex'>
                         <div className='sm:flex'>
-                            <span data-testid ="movie-title" className='text-sm font-semibold sm:text-xl'>{ movie.original_title || movie.belongs_to_collection.name}      
+                            <span className='text-sm font-semibold sm:text-lg'>
+                                <span data-testid ="movie-title"  className='mr-2'>{ movie.original_title || movie.belongs_to_collection.name} </span> 
                                 <span data-testid ="movie-release-date" >
                                     &bull;
-                                    {movie.release_date}
+                                    <span className='mx-3'>{utcDate === "Invalid Date" ? "" : utcDate}</span>
                                     &bull;
                                 </span>
-                                <span data-testid ="movie-runtime" >
-                                    PG-13 &bull;
-                                    {movie.runtime} 
+                                <span>
+                                    <span  className='mx-3'>PG-13 &bull;</span>
+                                    <span data-testid ="movie-runtime">{movie.runtime}mins</span>
                                 </span>
                             </span>
                             
@@ -139,7 +141,7 @@ export default async function Details({params}) {
                             <button className='flex border-2 text-sm  border-[#BE123C] items-center gap-2 px-5 py-2 bg-gray-200 text-[#BE123C] rounded-md w-full sm:w-[60%] sm:ml-auto justify-center mt-2'><AiOutlineMenuUnfold />More watch options</button>
 
                             <div className='mt-2'>
-                                <Image src={demo} width={0} height={0} alt='Zuri demo' className='sm:w-[60%] w-[80%] mx-auto sm:ml-auto'/>
+                                <Image src={demo} width={0} height={0} alt='Zuri demo' className='sm:w-[60%] w-[80%] mx-auto sm:mx-0 sm:ml-auto'/>
                             </div>
 
                        </div>
