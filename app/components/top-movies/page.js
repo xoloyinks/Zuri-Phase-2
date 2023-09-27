@@ -8,7 +8,7 @@ export default async function TopMovies() {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: process.env.AUTH_KEY
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyODU3MWQzY2IyMGYwYTMwYWJkY2Q0M2UyMDJhYTk1MCIsInN1YiI6IjY0ZmUyODE2ZWZlYTdhMDBmZDFhM2I4NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-H2h8z08PGBQBcmNw6Aw8f0UK1Ia-66KQSook53Cpxs"
       }
     };
      
